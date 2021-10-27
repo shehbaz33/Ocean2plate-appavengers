@@ -51,3 +51,15 @@ nav li:last-child a img {
   background: #04242e;
   color: #fff;
 }
+
+.footer-bg {
+  background: #f8f8f8;
+}
+
+.amount {
+  color: #0e3e4d;
+}
+
+.register {
+  color: #0e3e4d;
+}
