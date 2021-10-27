@@ -1,0 +1,53 @@
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothin: antialiased;
+  color: #232323;
+}
+
+nav {
+  border-bottom: 1px solid #04242e;
+}
+
+nav li:last-child a {
+  background: #0e3e4d;
+}
+nav li:last-child a:hover {
+  background: #04242e;
+}
+
+nav li a {
+  transition: all 0.3s ease-in-out;
+}
+nav li a:hover {
+  color: #04242e;
+}
+
+.nav-logo {
+  width: 100px;
+}
+
+nav li:last-child a img {
+  width: 25px;
+}
+
+.btn-primary {
+  background: #0e3e4d;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background: #04242e;
+}
+
+.size {
+  background: #f8f8f8;
+}
+
+.add-to-cart {
+  border: 2px solid #0e3e4d;
+  color: #0e3e4d;
+  transition: all 0.3s ease-in-out;
+}
+.add-to-cart:hover {
+  background: #04242e;
+  color: #fff;
+}

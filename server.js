@@ -5,10 +5,13 @@ const expressLayout = require('express-ejs-layouts')
 const ejs = require('ejs')
 const path = require('path')
 
+app.use(express.static('public'))
 
 app.get('/', (req,res) => {
     res.render('home')
 })
+
+
 
 app.use(expressLayout);
 app.set('view engine','ejs');

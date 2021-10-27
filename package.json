@@ -2,7 +2,7 @@
   "name": "food-delivery-app",
   "version": "1.0.0",
   "main": "server.js",
-  "author":"shehbaz",
+  "author": "shehbaz",
   "scripts": {
     "dev": "nodemon server.js",
     "serve": "node server.js"
@@ -14,6 +14,10 @@
     "express-ejs-layouts": "^2.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "laravel-mix": "^6.0.34",
+    "nodemon": "^2.0.14",
+    "resolve-url-loader": "4.0.0",
+    "sass": "^1.43.4",
+    "sass-loader": "12.1.0"
   }
 }
