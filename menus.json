@@ -1,0 +1,65 @@
+[{
+    "_id": {
+      "$oid": "5eee651f739f8c674fd736ee"
+    },
+    "name": "Rohu",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "250",
+    "size": "small"
+  },{
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2bea3"
+    },
+    "name": "Baasa",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "300",
+    "size": "medium"
+  },{
+    "_id": {
+      "$oid": "5eee6692a27a66807cf2bea4"
+    },
+    "name": "Red snapper fish",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "200",
+    "size": "small"
+  },{
+    "_id": {
+      "$oid": "5eee66a5a27a66807cf2bea5"
+    },
+    "name": "Salmon",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "500",
+    "size": "large"
+  },{
+    "_id": {
+      "$oid": "5eee66c4a27a66807cf2bea6"
+    },
+    "name": "Hilsa",
+    "image": "",
+    "price": "350",
+    "size": "medium"
+  },{
+    "_id": {
+      "$oid": "5eee66cfa27a66807cf2bea7"
+    },
+    "name": "Prawns",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "200",
+    "size": "small"
+  },{
+    "_id": {
+      "$oid": "5eee66eea27a66807cf2bea8"
+    },
+    "name": "Bombay duck",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "600",
+    "size": "large"
+  },{
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2bea9"
+    },
+    "name": "Pomfret",
+    "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
+    "price": "500",
+    "size": "medium"
+  }]
