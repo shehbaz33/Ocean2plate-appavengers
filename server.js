@@ -10,6 +10,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const { collection } = require('./app/models/menu')
 let MongoDbStore = require('connect-mongo')
+const passport = require('passport')
 
 
 const MONGO_URL = process.env.MONGO_URL
@@ -27,8 +28,8 @@ const MONGO_URL = process.env.MONGO_URL
 app.use(
     session({
         secret: process.env.COOKIE_SECRET,
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         cookie:{maxAge:1000 * 60 * 60 * 24},
         store: MongoDbStore.create({
             mongoUrl:process.env.MONGO_URL,
@@ -37,16 +38,25 @@ app.use(
     })
 );
 
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.use(flash())
+
 // Session middleware for accessing in frontend
 app.use((req,res,next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next()
 })
 
 app.use(express.static('public'))
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 
 app.use(expressLayout);
 app.set('views', path.join(__dirname,'/resources/views'))
