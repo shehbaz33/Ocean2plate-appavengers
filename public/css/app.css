@@ -346,3 +346,7 @@ nav li:last-child a img {
   border-radius: 50px !important;
   padding-left: 8px !important;
 }
+
+a.link {
+  color: #0e3e4d;
+}
