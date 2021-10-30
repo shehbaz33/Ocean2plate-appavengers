@@ -11,6 +11,7 @@ const flash = require('express-flash')
 const { collection } = require('./app/models/menu')
 let MongoDbStore = require('connect-mongo')
 const passport = require('passport')
+const Emitter = require('events')
 
 
 const MONGO_URL = process.env.MONGO_URL
@@ -24,6 +25,9 @@ const MONGO_URL = process.env.MONGO_URL
 } catch (error) {
     console.log('Connection not successfull')
 }
+
+const eventEmitter = new Emitter()
+app.set('eventEmitter',eventEmitter)
 
 app.use(
     session({
@@ -72,21 +76,22 @@ require('./routes/web')(app)
 
 
 // DATABASE CONNECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(PORT,() => {
+const server = app.listen(PORT,() => {
     console.log(`Listening on port ${PORT}`)
+})
+
+const io = require('socket.io')(server)
+
+io.on('connection',(socket) => {
+    socket.on('join',(orderId) => {
+        socket.join(orderId)
+    })
+})
+
+eventEmitter.on('orderUpdated', (data) => {
+    io.to(`order_${data.id}`).emit('orderUpdated',data)
+})
+
+eventEmitter.on('orderPlaced', (data) => {
+    io.to('adminRoom').emit('orderPlaced',data)
 })

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import moment from 'moment'
 import Noty from 'noty'
 import {initAdmin} from './admin'
 
@@ -38,4 +39,63 @@ if(alertMsg){
     },2000)
 }
 
-initAdmin()
+
+
+// Change order status
+let statuses = document.querySelectorAll('.status_line')
+let order  = document.querySelector('#hiddenInput') ? document.querySelector('#hiddenInput').value : null 
+order = JSON.parse(order)
+let time = document.createElement('small')
+console.log(statuses)
+
+function updateStatus(order){
+    statuses.forEach((status) => {
+        status.classList.remove('step-completed')
+        status.classList.remove('current')
+    })
+    let statusCompleted = true;
+    statuses.forEach((status) => {
+        let dataProp = status.dataset.status
+        console.log(dataProp)
+        if(statusCompleted){
+            status.classList.add('step-completed')
+        }
+        if(dataProp === order.status){
+            statusCompleted = false
+            time.innerText = moment(order.updatedAt).format('hh:mm A')
+            status.appendChild(time)
+            if(status.nextElementSibling){
+                status.nextElementSibling.classList.add('current')
+            }
+        }
+    })
+}
+
+updateStatus(order);
+
+// Socket connection
+let socket = io()
+// Join socket rooms
+if(order){
+    socket.emit('join',`order_${order._id}`)
+}
+
+initAdmin(socket)
+
+let adminAreaPath = window.location.pathname
+if(adminAreaPath.includes('admin')){
+    socket.emit('join','adminRoom')
+}
+
+socket.on('orderUpdated',(data) => {
+    const updatedOrder = {...order}
+    updatedOrder.updatedAt = moment().format()
+    updatedOrder.status = data.status
+    updateStatus(updatedOrder)
+    new Noty({
+        type:'success',
+        timeout: 1000,
+        text: 'Order updated',
+        progressBar:false,
+    }).show();
+})
