@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza app</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
-    <nav class="mx-auto flex items-center justify-between container max-w-screen-lg">
-        <div>
-            <img src="/img/logo.png" alt="logo" srcset="" class="nav-logo">
-        </div>
-        <div>
-            <ul class="flex items-center">
-                <li class="ml-6"><a href="#">Menu</a></li>
-                <li class="ml-6"><a href="#">Offer</a></li>
-                <li class="ml-6"><a href="#">Register</a></li>
-                <li class="ml-6"><a href="#">Login</a></li>
-                <li class="ml-6"><a href="#" class="inline-block py-2 px-4 rounded-full"> <img src="/img/cart.png" alt=""></a></li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Hero section -->
     <section class="hero py-16">
-        <div class="container mx-auto max-w-screen-lg items-center justify-between flex">
-            <div class="w-1/2">
+        <div class="container mx-auto max-w-screen-lg lg:flex justify-center items-center">
+            <div class="w-full lg:w-1/2 ml-4">
                 <h6 class="text-lg"><em>We deliver fresh fish from</em></h6>
                 <h1 class="text-6xl font-bold">Ocean 2 plate!</h1>
                 <button class="btn px-6 py-2 my-6 btn-primary rounded-full text-white">Order Now</button>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2">
                 <img src="/img/Hero-img.png" alt="" srcset="">
             </div>
         </div>
@@ -46,100 +18,20 @@
     <!-- Menu -->
     <section class="container mx-auto menu max-w-screen-lg flex justify-center">
         <div class="grid grid-cols-1 gap-y-24 lg:grid-cols-4">
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
+            <% fishes.forEach((fish) => { %>
+                <div class="w-64">
+                    <img class="h-40 mb-4 mx-auto" src="<%= fish.image %>" alt="fish" srcset="">
+                    <div class="text-center">
+                        <h2 class="mb-4 text-lg "><%= fish.name %></h2>
+                        <span class="py-1 px-4 rounded-full uppercase text-xs size"><%= fish.size %></span>
+                        <div class="flex items-center justify-around mt-6">
+                            <span class="font-bold text-lg">₹<%= fish.price %></span>
+                            <button data-fish="<%= JSON.stringify(fish) %>" class="add-to-cart py-1 px-6 rounded-full flex items-center">
+                                <span>+</span>
+                                <span class="ml-4">Add</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/fish.png" alt="fish" srcset="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg ">Rohu</h2>
-                    <span class="py-1 px-4 rounded-full uppercase text-xs size">Small</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹500/Kg</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+           <% }) %>
     </section>
-
-    <!-- Test section -->
-    <h1 class="h-24">This is just for goit</h1>
-    <script src="/js/app.js"></script>
-</body>
-</html>
