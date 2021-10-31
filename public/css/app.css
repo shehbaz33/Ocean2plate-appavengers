@@ -275,15 +275,15 @@
   color: #fff;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Lato", sans-serif;
   -webkit-font-smoothin: antialiased;
   color: #232323;
   overflow-x: hidden;
-}
-
-nav {
-  border-bottom: 1px solid #04242e;
 }
 
 nav li:last-child a {
@@ -301,7 +301,8 @@ nav li a:hover {
 }
 
 .nav-logo {
-  width: 100px;
+  width: 34px;
+  margin: 15px 20px 15px;
 }
 
 nav li:last-child a img {
@@ -331,7 +332,10 @@ nav li:last-child a img {
 }
 
 .footer-bg {
-  background: #f8f8f8;
+  background-image: url("https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
 }
 
 .amount {
@@ -448,4 +452,11 @@ a.link {
   float: right;
   font-size: 14px;
   margin-top: 8px;
+}
+
+section.hero-background {
+  background-image: url("https://image.freepik.com/free-photo/frame-with-fresh-fish-condiments_23-2148290465.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
 }
