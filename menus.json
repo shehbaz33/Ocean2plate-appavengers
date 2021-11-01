@@ -13,7 +13,7 @@
     "name": "Baasa",
     "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
     "price": "300",
-    "size": "medium"
+    "size": "large"
   },{
     "_id": {
       "$oid": "5eee6692a27a66807cf2bea4"
