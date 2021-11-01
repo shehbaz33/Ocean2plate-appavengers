@@ -21,7 +21,7 @@
     "name": "Red snapper fish",
     "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
     "price": "200",
-    "size": "small"
+    "size": "large"
   },{
     "_id": {
       "$oid": "5eee66a5a27a66807cf2bea5"
