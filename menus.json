@@ -53,7 +53,7 @@
     "name": "Bombay duck",
     "image": "https://www.freeiconspng.com/uploads/fish-png-transparent-15.png",
     "price": "600",
-    "size": "medium"
+    "size": "large"
   },{
     "_id": {
       "$oid": "5eee6717a27a66807cf2bea9"
