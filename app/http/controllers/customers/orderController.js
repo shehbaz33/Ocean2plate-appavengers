@@ -25,7 +25,7 @@ function orderController() {
                     return res.redirect('/customer/order')
                 })
             }).catch(err => {
-                req.flash('error', 'something went wrong')
+                req.flash('error', 'something is not right')
                 return res.redirect('/cart')
             })
         },
